@@ -29,8 +29,9 @@ sulphates|황 화합물|와인을 오래 보관하게 함
 alcohol|알코올|와인의 단 맛과 무게감에 영향
 
 #### Output variable (based on sensory data): 
-12. quality (score between 0 and 10), 와인 품질
+- quality (score between 0 and 10), 와인 품질
 
+<br>
 
 ## 1. Explanatory Data Analysis
 
@@ -77,9 +78,9 @@ alcohol|알코올|와인의 단 맛과 무게감에 영향
 
 ![](./img/all-features-pairplot-hue-quality.png)
 
+<br>
 
 ## 2. Preprocess Test
-
 기본 Linear Regression 모델을 사용하여, 다양한 전처리 패키지의 적용 효과를 확인한다.
 
 <br>
@@ -115,6 +116,7 @@ alcohol|알코올|와인의 단 맛과 무게감에 영향
     - `LOF -> PF -> RFE -> PCA` 전처리 파이프라인의 세부 파라미터 튜닝
     - 학습 모델 파라미터 튜닝 (학습방식이 다른 이하 4개 모델)
 
+<br>
 
 ## 3. Simple Model Test
 목적 : 전처리 및 파라미터 튜닝을 최소화한 상태에서 모델 기본 성능을 검증하고, 튜닝 모델 후보를 선정한다.
@@ -137,7 +139,6 @@ alcohol|알코올|와인의 단 맛과 무게감에 영향
 - Simple Neural Net은 머신러닝 모델보다 낮은 성능
     - 데이터 샘플이 딥러닝에 적합한 수준만큼 많지 않기 때문인 것으로 추정
 
-<br>
 
 Model(No Tuning)|Best Setting|Best Score(Test MSE)
 -|-|-
@@ -153,7 +154,6 @@ LightGBM Regressor|(non-stratified, RobustScaler)|0.4153
 CatBoost Regressor|(non-stratified, RobustScaler)|0.379
 Keras Simple NN|(stratified, StandardScaler)|0.4707
 
-
 <br>
 
 ### Conclusion
@@ -167,6 +167,8 @@ Keras Simple NN|(stratified, StandardScaler)|0.4707
     - 연산량이 높은 편
     - 모델 자체 하이퍼 파라미터 갯수가 많은 편
     - 스케일러 테스트만 진행하고, 모델 자체 파라미터 튜닝에 집중
+
+<br>
 
 
 ## 4. Model Tuning
