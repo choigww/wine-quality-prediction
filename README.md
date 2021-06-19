@@ -216,7 +216,7 @@ target|accuracy|mse_by_target
 ### SVM Regressor
 
 #### Result
-- Best Cross Validation (StratifiedKFold, n_splits=5) MSE
+- Best Cross Validation (KFold, n_splits=5) MSE
     - 0.402
 - Test MSE
     - 0.495
@@ -252,7 +252,7 @@ target|accuracy|mse_by_target
 ### CatBoost Regressor
 
 #### Result
-- Best Cross Validation (StratifiedKFold, n_splits=5) MSE
+- Best Cross Validation (KFold, n_splits=5) MSE
     - 0.395
 - Test MSE
     - 0.423
